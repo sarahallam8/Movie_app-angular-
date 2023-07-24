@@ -1,0 +1,25 @@
+<h2 class="py-2">Login</h2>
+<div class="w-75 mx-auto">
+   <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+   <form (ngSubmit)="submitLoginForm(loginForm)"  [formGroup]="loginForm">
+  
+      
+        <label for="email">email :</label>
+        <input formControlName="email" class="form-control mb-2"/>
+        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+          <p *ngIf="loginForm.get('email')?.getError('required')" class="alert py-1 alert-danger">this field is required</p>     
+          <p *ngIf="loginForm.get('email')?.getError('min')" class="alert py-1 alert-danger">invalid format</p> 
+          </div>
+        
+          <label for="password">password :</label>
+         <input formControlName="password" class="form-control mb-2"/>
+          <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+          <p *ngIf="loginForm.get('password')?.getError('required')" class="alert py-1 alert-danger">this field is required</p>     
+          <p *ngIf="loginForm.get('first_name')?.getError('pattern')" class="alert py-1 alert-danger">password must has 3 to 8 letters/p> 
+         </div>
+       <button [disabled]="loginForm.invalid" class="btn btn-outline-info">
+        <span *ngIf="isLoading"><i  class="fas fa-spinner fa-spin"></i></span>
+        <span *ngIf="!isLoading">log in</span>
+       </button>
+
+  </form>
