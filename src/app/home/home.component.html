@@ -1,1 +1,62 @@
-<p>home works!</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center">
+           <div>
+            <div class="bdr w-25 mb-4 mt-4"></div>
+            <h2>Trending<br/>
+              Movies <br/>To watch right now
+             </h2>
+              <p class="text-muted">most watched movies by day</p>
+            <div class="bdr w-100 mt-4"></div>
+           </div>
+        </div>
+        <div *ngFor="let x of trendingMovies" class="col-md-2">
+            <div routerLink="/moviedetails/{{x.id}}">
+                <img class="img-fluid" [src]="imagePath+x.poster_path">
+                <h3 class="h6 my-3">{{x.title}}</h3>
+                <p class="text-muted">{{x.overview|seemore:10}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-md-4 d-flex align-items-center">
+            <div>
+             <div class="bdr w-25 mb-4 mt-4"></div>
+             <h2>Trending<br/>
+               TV shows <br/>To watch right now
+              </h2>
+               <p class="text-muted">most watched TVshow by day</p>
+             <div class="bdr w-100 mt-4"></div>
+            </div>
+         </div>
+        
+        <div *ngFor="let x of trendingTv" class="col-md-2">
+            <div>
+            <img class="img-fluid" [src]="imagePath+x.poster_path">
+            <h3 class="h6 my-3">{{x.name}}</h3>
+            <p class="text-muted">{{x.overview|seemore:10}}</p>
+        
+        </div>
+
+        </div>
+        <div class="row py-5">
+            <div class="col-md-4 d-flex align-items-center">
+                <div>
+                 <div class="bdr w-25 mb-4 mt-4"></div>
+                 <h2>Trending<br/>
+                   Actors <br/>To watch right now
+                  </h2>
+                   <p class="text-muted">most watched person by day</p>
+                 <div class="bdr w-100 mt-4"></div>
+                </div>
+             </div>
+            <div *ngFor="let x of trendingPeople" class="col-md-2">
+                <div>
+                <img class="img-fluid" [src]="imagePath+x.profile_path">
+                <h3 class="h6 my-3">{{x.name}}</h3>
+            </div>
+            </div>
+    </div>
+

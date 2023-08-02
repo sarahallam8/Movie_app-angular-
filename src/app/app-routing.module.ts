@@ -7,6 +7,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'' ,redirectTo :'home' ,pathMatch:'full'},
   {path:'home' ,component:HomeComponent},
   {path:'movies' ,component:MoviesComponent},
+  {path:'moviedetails/:id' ,component:MoviedetailsComponent},
   {path:'gallery' ,component:GalleryComponent},
   {path:'register' ,component:RegisterComponent}, 
   {path:'login' ,component:LoginComponent},

@@ -6,12 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { MoviesComponent } from './movies/movies.component'
+import { MoviesComponent } from './movies/movies.component';
+import { TvComponent } from './tv/tv.component'
+import { CommonModule } from '@angular/common';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
+import { SeemorePipe } from './seemore.pipe';
+import { SearchPipe } from './search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +26,19 @@ import { MoviesComponent } from './movies/movies.component'
     LoginComponent,
     NavbarComponent,
     NotfoundComponent,
-    MoviesComponent
+    MoviesComponent,
+    TvComponent,
+    MoviedetailsComponent,
+    SeemorePipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+   ReactiveFormsModule,
+    CommonModule
   
   ],
   providers: [],
