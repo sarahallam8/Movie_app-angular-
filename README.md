@@ -1,2 +1,2 @@
-# registeration with angular
+# Movie_app (angular)
  
